@@ -24,6 +24,8 @@ const Signup = () => {
     setLoading(true)
     setError("")
 
+    console.log(process.env.REACT_APP_BACKEND_URL)
+    
     try {
       const response = await axiosInstance.post("/auth/send-otp", { email })
       setStep("otp")
@@ -45,8 +47,6 @@ const Signup = () => {
       setLoading(false)
       return
     }
-
-    console.log(process.env.REACT_APP_BACKEND_URL)
     
     try {
       const response = await axiosInstance.post("/auth/signup", {
