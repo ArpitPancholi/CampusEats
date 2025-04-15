@@ -46,6 +46,8 @@ const Signup = () => {
       return
     }
 
+    console.log(process.env.REACT_APP_BACKEND_URL)
+    
     try {
       const response = await axiosInstance.post("/auth/signup", {
         email,
